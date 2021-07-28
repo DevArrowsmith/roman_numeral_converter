@@ -4,46 +4,39 @@ const romanNumeralEncoder = (num) => {
     return "Please input a valid number."
   };
 
-  let remaining = num;
-  let numeral = "";
-
-  switch(num) {
-    case 1:
-      return "I";
-    case 5:
-      return "V";
-    case 10:
-      return "X";
-    case 50:
-      return "L";
-    case 100:
-      return "C";
-    default:
-      
-  while (remaining > 0) {
-    numeral += "I";
-    remaining -= 1;
-  };
-  return numeral;
+  const onesNumerals = {
+    1: "I",
+    2: "II",
+    3: "III",
+    4: "IV",
+    5: "V",
+    6: "VI",
+    7: "VII",
+    8: "VIII",
+    9: "IX",
+    0: ""
   }
 
+  const tensNumerals = {
+    1: "X",
+    2: "XX",
+    3: "XXX",
+    4: "XL",
+    5: "L",
+    6: "LX",
+    7: "LXX",
+    8: "LXXX",
+    9: "XC",
+    10: "C",
+    NaN: ""
+  };
 
+  const stringifiedNumber = num.toString();
 
+  const onesInput = parseInt(stringifiedNumber.substring(stringifiedNumber.length - 1));
+  const tensInput = parseInt(stringifiedNumber.substring(0, stringifiedNumber.length - 1));
 
+  return tensNumerals[tensInput] + onesNumerals[onesInput];
+};
 
-
-
-}
-
-module.exports = { romanNumeralEncoder }
-
-/*
-1: I
-5: v
-10: x
-50: L
-100: C
-
-Pass in a number
-Return the roman numeral
-*/
+module.exports = { romanNumeralEncoder };
