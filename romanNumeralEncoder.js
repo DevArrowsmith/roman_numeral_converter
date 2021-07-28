@@ -14,6 +14,10 @@ const romanNumeralEncoder = (num) => {
       return "V";
     case 10:
       return "X";
+    case 50:
+      return "L";
+    case 100:
+      return "C";
     default:
       
   while (remaining > 0) {

@@ -43,12 +43,25 @@ describe.only('romanNumeralEncoder()', () => {
     expect(romanNumeralEncoder(number)).toBe(numeral);
   })
 
+  it('converts the number 50 into the string L', () => {
+    const number = 50;
+    const numeral = "L";
+
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  })
+
+  it('converts the number 100 into the string C', () => {
+    const number = 100;
+    const numeral = "C";
+
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  })
+
   it('converts the number 2 into the string II', () => {
     const number = 2;
     const numeral = "II";
 
     expect(romanNumeralEncoder(number)).toBe(numeral);
   })
-
 
 })
