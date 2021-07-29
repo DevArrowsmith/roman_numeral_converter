@@ -107,4 +107,28 @@ describe.only('romanNumeralEncoder()', () => {
     const numeral = "CI";
     expect(romanNumeralEncoder(number)).toBe(numeral);
   });
+
+  it('converts the number 126 into the string CXXVI', () => {
+    const number = 126;
+    const numeral = "CXXVI";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
+
+  it('converts the number 259 into the string CLIX', () => {
+    const number = 259;
+    const numeral = "CCLIX";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
+
+  it('converts the number 736 into the string DCCXXXVI', () => {
+    const number = 736;
+    const numeral = "DCCXXXVI";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
+
+  it('converts the number 999 into the string CMXCIX', () => {
+    const number = 999;
+    const numeral = "CMXCIX";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
 });
