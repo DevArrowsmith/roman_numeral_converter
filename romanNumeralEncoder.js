@@ -27,16 +27,30 @@ const romanNumeralEncoder = (num) => {
     7: "LXX",
     8: "LXXX",
     9: "XC",
-    10: "C",
-    NaN: ""
+    0: "",
+    undefined: ""
   };
 
-  const stringifiedNumber = num.toString();
+  const hundredsNumerals = {
+    1: "C",
+    2: "CC",
+    3: "CCC",
+    4: "CD",
+    5: "D",
+    6: "DC",
+    7: "DCC",
+    8: "DCCC",
+    9: "CM",
+    undefined: ""
+  };
 
-  const onesInput = parseInt(stringifiedNumber.substring(stringifiedNumber.length - 1));
-  const tensInput = parseInt(stringifiedNumber.substring(0, stringifiedNumber.length - 1));
+  let digitArray = num.toString().split("");
 
-  return tensNumerals[tensInput] + onesNumerals[onesInput];
+  const onesInput = digitArray.pop();
+  const tensInput = digitArray.pop();
+  const hundredsInput = digitArray.pop();
+
+  return hundredsNumerals[hundredsInput] + tensNumerals[tensInput] + onesNumerals[onesInput];
 };
 
 module.exports = { romanNumeralEncoder };

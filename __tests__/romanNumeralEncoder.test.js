@@ -101,4 +101,10 @@ describe.only('romanNumeralEncoder()', () => {
     const numeral = "C";
     expect(romanNumeralEncoder(number)).toBe(numeral);
   });
+
+  it('converts the number 101 into the string CI', () => {
+    const number = 101;
+    const numeral = "CI";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
 });
