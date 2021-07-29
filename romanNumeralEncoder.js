@@ -2,6 +2,8 @@
 const romanNumeralEncoder = (num) => {
   if (typeof(num) !== "number" || Number.isNaN(num)) {
     return "Please input a valid number."
+  } else if (num > 9999) {
+    return "Please input a valid four digit number."
   };
 
   const onesNumerals = {

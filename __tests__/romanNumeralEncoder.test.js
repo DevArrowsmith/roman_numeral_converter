@@ -23,6 +23,17 @@ describe.only('romanNumeralEncoder()', () => {
     expect(nanResult).toBe(expected);
   });
 
+  it('only accepts numbers up to 9999 inclusive', () => {
+    const maxAcceptedNumber = 9999;
+    const tooManyDigits = 10000;
+
+    const withinRange = romanNumeralEncoder(maxAcceptedNumber);
+    const outsideRange = romanNumeralEncoder(tooManyDigits);
+    
+    expect(withinRange).toBe("MX̄CMXCIX");
+    expect(outsideRange).toBe("Please input a valid four digit number.");
+  });
+
   it('converts the number 1 into the string I', () => {
     const number = 1;
     const numeral = "I";
