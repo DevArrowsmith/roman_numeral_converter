@@ -41,6 +41,21 @@ const romanNumeralEncoder = (num) => {
     7: "DCC",
     8: "DCCC",
     9: "CM",
+    0: "",
+    undefined: ""
+  };
+
+  const thousandsNumerals = {
+    1: "M",
+    2: "MM",
+    3: "MMM",
+    4: "M∇",
+    5: "∇",
+    6: "∇M",
+    7: "∇MM",
+    8: "∇MMM",
+    9: "MX̄",
+    0: "",
     undefined: ""
   };
 
@@ -49,8 +64,9 @@ const romanNumeralEncoder = (num) => {
   const onesInput = digitArray.pop();
   const tensInput = digitArray.pop();
   const hundredsInput = digitArray.pop();
+  const thousandsInput = digitArray.pop();
 
-  return hundredsNumerals[hundredsInput] + tensNumerals[tensInput] + onesNumerals[onesInput];
+  return thousandsNumerals[thousandsInput] + hundredsNumerals[hundredsInput] + tensNumerals[tensInput] + onesNumerals[onesInput];
 };
 
 module.exports = { romanNumeralEncoder };

@@ -131,4 +131,10 @@ describe.only('romanNumeralEncoder()', () => {
     const numeral = "CMXCIX";
     expect(romanNumeralEncoder(number)).toBe(numeral);
   });
+
+  it('converts the number 1000 into the string M', () => {
+    const number = 1000;
+    const numeral = "M";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
 });
