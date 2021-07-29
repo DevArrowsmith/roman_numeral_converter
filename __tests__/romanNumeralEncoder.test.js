@@ -137,4 +137,34 @@ describe.only('romanNumeralEncoder()', () => {
     const numeral = "M";
     expect(romanNumeralEncoder(number)).toBe(numeral);
   });
+
+  it('converts the number 1234 into the string MCCXXXIV', () => {
+    const number = 1234;
+    const numeral = "MCCXXXIV";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
+
+  it('converts the number 3690 into the string M', () => {
+    const number = 3690;
+    const numeral = "MMMDCXC";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
+
+  it('converts the number 5555 into the string ∇DLV', () => {
+    const number = 5555;
+    const numeral = "∇DLV";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
+
+  it('converts the number 7899 into the string ∇MMDCCCXCIX', () => {
+    const number = 7899;
+    const numeral = "∇MMDCCCXCIX";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
+
+  it('converts the number 9999 into the string MX̄CMXCIX', () => {
+    const number = 9999;
+    const numeral = "MX̄CMXCIX";
+    expect(romanNumeralEncoder(number)).toBe(numeral);
+  });
 });
